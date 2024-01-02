@@ -10,7 +10,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/home/RajuArch/.local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-export OPEN_API_KEY="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"
 
 
 alias pi="pacman -S"
