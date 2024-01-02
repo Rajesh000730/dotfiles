@@ -1,0 +1,59 @@
+font:
+  normal:
+    family: 0xProtoNerdFont 
+    style: Regular
+
+  bold:
+    family: 0xProtoNerdFont
+    style: Bold
+
+  italic:
+    family: 0xProtoNerdFont  
+    style: Italic
+
+  bold_italic:
+    family: 0xProtoNerdFont 
+    style: Bold Italic
+
+  size: 10
+
+window:
+  padding:
+    x: 4
+    y: 4
+  dynamic_padding: true    
+# Cyber Punk Neon
+# Source: https://github.com/Roboron3042/Cyberpunk-Neon
+colors:
+  # Default colors
+  primary:
+    background: "0x000b1e"
+    foreground: "0x0abdc6"
+
+  # Colors the cursor will use if `custom_cursor_colors` is true
+  cursor:
+    text:   "0x000b1e"
+    cursor: "0x0abdc6"
+    style: Beam
+  # Normal colors
+  normal:
+    black:   "0x123e7c"
+    red:     "0xff5370"
+    green:   "0x4fd6be"
+    yellow:  "0xf57800"
+    blue:    "0x0cf017"
+    magenta: "0x711c91"
+    cyan:    "0x0abdc6"
+    white:   "0xd7d7d5"
+
+  # Bright colors
+  bright:
+    black:   "0x1c61c2"
+    red:     "0xff98a4"
+    green:   "0xc3e88d"
+    yellow:  "0xf57800"
+    blue:    "0x00ff00"
+    magenta: "0x711c91"
+    cyan:    "0x0abdc6"
+    white:   "0xd7d7d5"
+
