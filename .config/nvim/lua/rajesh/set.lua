@@ -1,5 +1,5 @@
 vim.opt.guicursor = ""
-
+vim.api.nvim_set_option("clipboard","unnamed") 
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -29,7 +29,7 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
-
+vim.opt.wrap = true
 
 
 

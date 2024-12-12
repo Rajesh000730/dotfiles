@@ -6,23 +6,15 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use {
+use {
   'nvim-telescope/telescope.nvim', tag = '0.1.5',
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
-  use ({
-	'rose-pine/neovim', 
-	as = 'rose-pine', 
-	config = function()
-		vim.cmd('colorscheme rose-pine')
-	end	
-  })
-  use('nvim-treesitter/nvim-treesitter', {run =  ':TSUpdate'})
-  use('nvim-treesitter/playground')
   use('ThePrimeagen/harpoon')
   use('mbbill/undotree')
   use('tpope/vim-fugitive')
+  
   use {
   'VonHeikemen/lsp-zero.nvim',
   branch = 'v3.x',
@@ -39,6 +31,57 @@ return require('packer').startup(function(use)
     {'hrsh7th/cmp-nvim-lsp'},
     {'L3MON4D3/LuaSnip'},
   }
+}  use {
+  "zbirenbaum/copilot.lua",
+  cmd = "Copilot",
+  event = "InsertEnter",
+  config = function()
+    require("copilot").setup({
+        require('copilot').setup({
+  panel = {
+    enabled = true,
+    auto_refresh = false,
+    keymap = {
+      jump_prev = "[[",
+      jump_next = "]]",
+      accept = "<CR>",
+      refresh = "gr",
+      open = "<M-CR>"
+    },
+    layout = {
+      position = "bottom", -- | top | left | right
+      ratio = 0.4
+    },
+  },
+  suggestion = {
+    enabled = true,
+    auto_trigger = false,
+    debounce = 75,
+    keymap = {
+      accept = "<M-l>",
+      accept_word = "<M-a>",
+      accept_line = false,
+      next = "<M-]>",
+      prev = "<M-[>",
+      dismiss = "<C-]>",
+    },
+  },
+  filetypes = {
+    yaml = false,
+    markdown = false,
+    help = false,
+    gitcommit = false,
+    gitrebase = false,
+    hgcommit = false,
+    svn = false,
+    cvs = false,
+    ["."] = false,
+  },
+  copilot_node_command = 'node', -- Node.js version must be > 18.x
+  server_opts_overrides = {},
+})
+    })
+  end,
 }
 require('lspconfig').lua_ls.setup({})
   use {
@@ -47,3 +90,4 @@ require('lspconfig').lua_ls.setup({})
     "neovim/nvim-lspconfig",
 }
   end)
+

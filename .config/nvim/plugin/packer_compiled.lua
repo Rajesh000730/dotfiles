@@ -49,8 +49,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/home/RajuArch/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?.lua;/home/RajuArch/.cache/nvim/packer_hererocks/2.1.1702233742/share/lua/5.1/?/init.lua;/home/RajuArch/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?.lua;/home/RajuArch/.cache/nvim/packer_hererocks/2.1.1702233742/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/home/RajuArch/.cache/nvim/packer_hererocks/2.1.1702233742/lib/lua/5.1/?.so"
+local package_path_str = "/home/RajuArch/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?.lua;/home/RajuArch/.cache/nvim/packer_hererocks/2.1.1727870382/share/lua/5.1/?/init.lua;/home/RajuArch/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?.lua;/home/RajuArch/.cache/nvim/packer_hererocks/2.1.1727870382/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/RajuArch/.cache/nvim/packer_hererocks/2.1.1727870382/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -84,6 +84,15 @@ _G.packer_plugins = {
     path = "/home/RajuArch/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
+  ["copilot.lua"] = {
+    commands = { "Copilot" },
+    config = { "\27LJ\2\nø\4\0\0\b\0\16\1\0286\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\3\0006\3\0\0'\5\1\0B\3\2\0029\3\2\0035\5\b\0005\6\3\0005\a\4\0=\a\5\0065\a\6\0=\a\a\6=\6\t\0055\6\n\0005\a\v\0=\a\5\6=\6\f\0055\6\r\0=\6\14\0054\6\0\0=\6\15\5B\3\2\0?\3\0\0B\0\2\1K\0\1\0\26server_opts_overrides\14filetypes\1\0\t\bsvn\1\14gitcommit\1\6.\1\tyaml\1\rmarkdown\1\thelp\1\bcvs\1\rhgcommit\1\14gitrebase\1\15suggestion\1\0\6\16accept_line\1\tprev\n<M-[>\16accept_word\n<M-a>\tnext\n<M-]>\fdismiss\n<C-]>\vaccept\n<M-l>\1\0\4\17auto_trigger\1\rdebounce\3K\fenabled\2\vkeymap\0\npanel\1\0\5\14filetypes\0\25copilot_node_command\tnode\26server_opts_overrides\0\npanel\0\15suggestion\0\vlayout\1\0\2\nratio\4š³æÌ\t™³æþ\3\rposition\vbottom\vkeymap\1\0\5\frefresh\agr\topen\v<M-CR>\14jump_next\a]]\14jump_prev\a[[\vaccept\t<CR>\1\0\4\fenabled\2\vkeymap\0\vlayout\0\17auto_refresh\1\nsetup\fcopilot\frequire\3€€À™\4\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/home/RajuArch/.local/share/nvim/site/pack/packer/opt/copilot.lua",
+    url = "https://github.com/zbirenbaum/copilot.lua"
+  },
   harpoon = {
     loaded = true,
     path = "/home/RajuArch/.local/share/nvim/site/pack/packer/start/harpoon",
@@ -114,31 +123,15 @@ _G.packer_plugins = {
     path = "/home/RajuArch/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
-  ["nvim-treesitter"] = {
-    loaded = true,
-    path = "/home/RajuArch/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
-    url = "https://github.com/nvim-treesitter/nvim-treesitter"
-  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/RajuArch/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  playground = {
-    loaded = true,
-    path = "/home/RajuArch/.local/share/nvim/site/pack/packer/start/playground",
-    url = "https://github.com/nvim-treesitter/playground"
-  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/RajuArch/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["rose-pine"] = {
-    config = { "\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0" },
-    loaded = true,
-    path = "/home/RajuArch/.local/share/nvim/site/pack/packer/start/rose-pine",
-    url = "https://github.com/rose-pine/neovim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -158,10 +151,25 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: rose-pine
-time([[Config for rose-pine]], true)
-try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26colorscheme rose-pine\bcmd\bvim\0", "config", "rose-pine")
-time([[Config for rose-pine]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'Copilot', function(cmdargs)
+          require('packer.load')({'copilot.lua'}, { cmd = 'Copilot', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'copilot.lua'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Copilot ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Event lazy-loads
+time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'copilot.lua'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
+time([[Defining lazy-load event autocommands]], false)
+vim.cmd("augroup END")
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

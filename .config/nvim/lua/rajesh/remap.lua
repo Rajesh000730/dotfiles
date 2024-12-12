@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+vim.keymap.set("n", "pp", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -47,8 +47,25 @@ vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end)
-vim.keymap.set("n", 'ii', ':w<CR>')
-vim.keymap.set("i", 'ii', '<ESC>')
+vim.keymap.set("n", 'ii', ':w<CR>', {noremap = true, silent = true})
+vim.keymap.set("i", '<C-s>', ':w<CR>')
 vim.keymap.set("n", '<TAB>', '>>')
 vim.keymap.set("n", '<BS>', '<<')
 vim.keymap.set("n", 'qq', ':q<CR>')
+vim.keymap.set("v", '/', ':norm I//<CR>')
+-- Remap keys in normal mode
+vim.api.nvim_set_keymap('n', 'h', '<Up>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'k', '<Down>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'j', '<Left>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'l', '<Right>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'lg', ':terminal lazygit<CR>i', { noremap = true, silent = true })
+-- Remap keys in visual mode
+vim.api.nvim_set_keymap('n', '<leader>t', ':terminal<CR>i', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>nh', ':noh<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('x', 'h', '<Up>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', 'k', '<Down>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', 'j', '<Left>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('x', 'l', '<Right>', { noremap = true, silent = true })
+vim.keymap.set("v", "<leader>y", '"*y')
