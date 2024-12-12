@@ -13,6 +13,9 @@ super + d
 super + l
   slock
 
+super + p
+    obsidian
+
 XF86AudioRaiseVolume
   pactl set-sink-volume 0 +5%
 XF86AudioLowerVolume
@@ -84,8 +87,8 @@ super + {_,shift + }c
 	bspc node -f {next,prev}.local.!hidden.window
 
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
+#super + bracket{left,right}
+#	bspc desktop -f {prev,next}.local
 
 # focus the last node/desktop
 super + {grave,Tab}
@@ -99,7 +102,7 @@ super + {o,i}
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
-	bspc {desktop -f,node -d} '^{1-9,10}'
+    bspc {desktop -f,node -d} '^{1-9,10}'
 
 #
 # preselect
@@ -137,10 +140,13 @@ super + alt + shift + {h,j,k,l}
 #super + {Left,Down,Up,Right}
 #	bspc node -v {-20 0,0 20,0 -20,20 0}
 
-super + {_,shift + }{Left,Down,Up,Right}
-  bspc node --{focus,swap} {west,south,north,east} 
+super + KP_1
+	bspc desktop -f ^1
 
 # move b/w desktops
-super + {_,shift + }{1-9,0}
-    bspc monitor -focused {desktop -f,window -d} ^{1-9,10}
-  
+ #move to the next workspace
+super + Right
+    bspc desktop -f next 
+# Move to the previous workspace
+super + Left
+    bspc desktop -f  prev
