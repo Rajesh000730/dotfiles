@@ -10,8 +10,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/home/RajuArch/.local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
-
-
+ export FLYCTL_INSTALL="/home/RajuArch/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
 alias pi="pacman -S"
 alias spi="sudo pacman -S"
 alias nrd="npm run dev"
@@ -123,6 +123,23 @@ source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
 alias rajesh="echo 'hello rajesh'"
+#tmux
+alias tmux_auto="tmux new-session -d -s session1 && tmux new-session -d -s session2 && tmux new-session -d -s session3 && tmux attach-session -t session1"
 
 alias n=nvim
+alias ta="tmux a -t"
+alias tn="tmux new -s"
 alias config='/usr/bin/git --git-dir=/home/RajuArch/.cfg/ --work-tree=/home/RajuArch'
+alias caseoh='bat caseoh.txt'
+# bun completions
+[ -s "/home/RajuArch/.bun/_bun" ] && source "/home/RajuArch/.bun/_bun"
+alias twitch_case='google twitch caseoh'
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+export PATH=/home/RajuArch/.bun/bin:/home/RajuArch/.fly/bin:/home/RajuArch/.local/bin:/home/RajuArch/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/home/RajuArch/.config/composer/vendor/bin
+export PATH="$HOME/go/bin:$PATH"
